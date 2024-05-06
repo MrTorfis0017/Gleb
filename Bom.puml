@@ -1,0 +1,45 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+class Admin {
+firstName:string
+secondName:string
+}
+
+enum ProductType{
+ELECTRONIC,
+GARDEN,
+CAR_PARTS,
+PETS,
+REAL_ESTATE
+}
+
+enum Currency{
+UAH,
+EUR,
+USD
+}
+
+class Price{
+cost:double
+}
+
+class Product{
+name:string
+price:Price
+}
+
+class Announcement{
+creationDate:Date
+description:string
+}
+
+Admin --o Announcement
+Product --o Announcement
+Currency --o Price
+Price --o Product
+ProductType --o Product
+
+
+@enduml
