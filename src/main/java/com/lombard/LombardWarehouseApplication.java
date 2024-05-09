@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LombardApplication {
+public class LombardWarehouseApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(LombardApplication.class);
+        SpringApplication.run(LombardWarehouseApplication.class);
     }
 }

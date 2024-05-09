@@ -30,16 +30,30 @@ name:string
 price:Price
 }
 
-class Announcement{
+class AuctionAnnouncement{
 creationDate:Date
 description:string
 }
 
-Admin --o Announcement
-Product --o Announcement
+class Salesman{
+firstName:string
+secondName:string
+phone:string
+}
+
+class SaleAnnouncement{
+saleDate:Date
+description:string
+interestRate:double
+frequency:string
+}
+
+Admin --o AuctionAnnouncement
+Product --o AuctionAnnouncement
 Currency --o Price
 Price --o Product
 ProductType --o Product
-
+Salesman --o SaleAnnouncement
+Product --o SaleAnnouncement
 
 @enduml

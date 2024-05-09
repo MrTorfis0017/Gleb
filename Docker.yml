@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  gleb-lombard:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: lombard-warehouse
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: psw
+    ports:
+      - "8432:5432"
