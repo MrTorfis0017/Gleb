@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_salesman_table
+      author: aleksandrPob
+      changes:
+        - createTable:
+            tableName: SALESMAN
+            columns:
+              - column:
+                  name: ID
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: PK_USER
+              - column:
+                  name: FIRST_NAME
+                  type: VARCHAR(50)
+                  constraints:
+                    unique: false
+                    nullable: false
+              - column:
+                  name: LAST_NAME
+                  type: VARCHAR(50)
+                  constraints:
+                    unique: false
+                    nullable: false
+              - column:
+                  name: PHONE
+                  type: VARCHAR(12)
+                  constraints:
+                    unique: false
+                    nullable: false
