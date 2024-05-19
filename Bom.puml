@@ -1,18 +1,9 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-
 class Admin {
 firstName:string
 secondName:string
-}
-
-enum ProductType{
-ELECTRONIC,
-GARDEN,
-CAR_PARTS,
-PETS,
-REAL_ESTATE
 }
 
 enum Currency{
@@ -25,9 +16,51 @@ class Price{
 cost:double
 }
 
-class Product{
-name:string
+interface Product{
+getName():string
+getPrice():double
+getDescription():string
+displayProductInfo():void
+}
+
+interface ProductFactory{
+createProduct(name:string,price:Price,description:string):Product
+}
+
+class Electronics{
+brand:string
+model:string
 price:Price
+}
+
+class GardenTools{
+toolType:string
+material:string
+price:Price
+}
+
+class CarParts{
+partNumber:string
+compatability:string
+price:Price
+}
+
+class ElectronicsFactory{
+}
+
+class GardenToolsFactory{
+}
+
+class CarPartsFactory{
+}
+
+class ElectronicsAdapter{
+}
+
+class GardenToolsAdapter{
+}
+
+class CarPartsAdapter{
 }
 
 class AuctionAnnouncement{
@@ -52,8 +85,15 @@ Admin --o AuctionAnnouncement
 Product --o AuctionAnnouncement
 Currency --o Price
 Price --o Product
-ProductType --o Product
 Salesman --o SaleAnnouncement
 Product --o SaleAnnouncement
-
+Electronics --o ElectronicsAdapter
+ElectronicsAdapter ..|> Product
+GardenTools --o GardenToolsAdapter
+GardenTools ..|> Product
+CarParts --o CarPartsAdapter
+CarParts ..|> Product
+ElectronicsFactory ..|> ProductFactory
+GardenToolsFactory ..|> ProductFactory
+CarPartsFactory ..|> ProductFactory
 @enduml
