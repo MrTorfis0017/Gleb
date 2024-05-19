@@ -25,7 +25,7 @@ displayProductInfo():void
 
 interface ProductFactory{
 createProduct(name:string,price:Price,description:string):Product
-createProduct(name:string,price:Price,description:string):ProductDto
+createProductDto(name:string,price:Price,description:string):ProductDto
 }
 
 class Electronics{
