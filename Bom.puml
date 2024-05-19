@@ -25,6 +25,7 @@ displayProductInfo():void
 
 interface ProductFactory{
 createProduct(name:string,price:Price,description:string):Product
+createProduct(name:string,price:Price,description:string):ProductDto
 }
 
 class Electronics{
@@ -84,15 +85,17 @@ frequency:string
 Admin --o AuctionAnnouncement
 Product --o AuctionAnnouncement
 Currency --o Price
-Price --o Product
+Price --o Electronics
+Price --o GardenTools
+Price --o CarParts
 Salesman --o SaleAnnouncement
 Product --o SaleAnnouncement
 Electronics --o ElectronicsAdapter
 ElectronicsAdapter ..|> Product
 GardenTools --o GardenToolsAdapter
-GardenTools ..|> Product
+GardenToolsAdapter ..|> Product
 CarParts --o CarPartsAdapter
-CarParts ..|> Product
+CarPartsAdapter ..|> Product
 ElectronicsFactory ..|> ProductFactory
 GardenToolsFactory ..|> ProductFactory
 CarPartsFactory ..|> ProductFactory
