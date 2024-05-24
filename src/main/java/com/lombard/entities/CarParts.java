@@ -24,4 +24,8 @@ public class CarParts {
 
     @Column(name = "PRICE")
     private Double price;
+
+    @OneToOne
+    @JoinColumn(name = "DISCOUNT_ID")
+    private Discount discount;
 }

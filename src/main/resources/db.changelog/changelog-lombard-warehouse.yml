@@ -1,5 +1,7 @@
 databaseChangeLog:
   - include:
+      file: db.changelog/changeset/create-discount.yml
+  - include:
       file: db.changelog/changeset/create-user.yml
   - include:
       file: db.changelog/changeset/garden-tools.yml

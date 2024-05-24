@@ -1,5 +1,7 @@
 package com.lombard.dtos;
 
+import com.lombard.strategy.PricingStrategy;
+import com.lombard.strategy.RegularPricingStrategy;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,4 +18,13 @@ public class CarPartsDto implements Product {
     private String compatability;
 
     private Double price;
+
+    private PricingStrategy pricingStrategy;
+
+    public double getPrice() {
+        if (pricingStrategy == null) {
+            pricingStrategy = new RegularPricingStrategy();
+        }
+        return pricingStrategy.calculatePrice(price);
+    }
 }

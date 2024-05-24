@@ -32,3 +32,11 @@ databaseChangeLog:
                   constraints:
                     unique: false
                     nullable: false
+              - column:
+                  name: DISCOUNT_ID
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+                    unique: false
+                    foreignKeyName: FK_DISCOUNT_ID
+                    references: DISCOUNT(ID)

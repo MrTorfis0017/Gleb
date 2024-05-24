@@ -14,15 +14,19 @@ public class CarPartsFactory {
                 .compatability(carParts.getCompatability())
                 .partNumber(carParts.getPartNumber())
                 .price(carParts.getPrice())
+                .pricingStrategy(null)
                 .build();
     }
 
     public static CarParts createCarParts(CarPartsDto carParts) {
+
+
         return CarParts.builder()
                 .id(carParts.getId())
                 .compatability(carParts.getCompatability())
                 .partNumber(carParts.getPartNumber())
                 .price(carParts.getPrice())
+                .discount(null)
                 .build();
     }
 }

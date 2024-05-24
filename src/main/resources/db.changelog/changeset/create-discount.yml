@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_discount_table
+      author: aleksandrPob
+      changes:
+        - createTable:
+            tableName: DISCOUNT
+            columns:
+              - column:
+                  name: ID
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: PK_DISCOUNT
+              - column:
+                  name: DISCOUNT_PERCENTAGE
+                  type: BIGINT
+                  constraints:
+                    unique: false
+                    nullable: false

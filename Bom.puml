@@ -91,6 +91,18 @@ interestRate:double
 status:boolean
 }
 
+interface PricingStrategy{
+calculatePrice(double basePrice):double
+}
+
+class RegularPricingStrategy{
+}
+
+class DiscountPricingStrategy {
+discount:double
+}
+
+
 Admin --o AuctionAnnouncement
 Product --o AuctionAnnouncement
 Currency --o Price
@@ -107,4 +119,9 @@ CarParts --o CarPartsAdapter
 CarPartsAdapter ..|> Product
 ProductType --o SaleAnnouncement
 SaleAnnouncementStatus --o SaleAnnouncement
+RegularPricingStrategy ..|> PricingStrategy
+DiscountPricingStrategy ..|> PricingStrategy
+PricingStrategy--o Electronics
+PricingStrategy--o GardenTools
+PricingStrategy--o CarParts
 @enduml
