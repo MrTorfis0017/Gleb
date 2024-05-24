@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_garden_tools_table
+      author: aleksandrPob
+      changes:
+        - createTable:
+            tableName: GARDEN_TOOLS
+            columns:
+              - column:
+                  name: ID
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: PK_GARDEN_TOOLS
+              - column:
+                  name: TOOL_TYPE
+                  type: VARCHAR(50)
+                  constraints:
+                    unique: false
+                    nullable: false
+              - column:
+                  name: MATERIAL
+                  type: VARCHAR(50)
+                  constraints:
+                    unique: false
+                    nullable: false
+              - column:
+                  name: PRICE
+                  type: MONEY
+                  constraints:
+                    unique: false
+                    nullable: false

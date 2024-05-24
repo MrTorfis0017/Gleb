@@ -7,8 +7,6 @@ lastName:string
 }
 
 enum Currency{
-UAH,
-EUR,
 USD
 }
 
@@ -17,16 +15,9 @@ cost:double
 }
 
 interface Product{
-getName():string
-getPrice():double
 getDescription():string
-displayProductInfo():void
 }
 
-interface ProductFactory{
-createProduct(name:string,price:Price,description:string):Product
-createProductDto(name:string,price:Price,description:string):ProductDto
-}
 
 class Electronics{
 brand:string
@@ -47,12 +38,18 @@ price:Price
 }
 
 class ElectronicsFactory{
+createElectronics(ElectronicsDto):Electronics
+createElectronicsDto(Electronic):ElectronicsDto
 }
 
 class GardenToolsFactory{
+createGardenTools(GardenToolsDto):GardenTools
+createGardenToolsDto(GardenTools):GardenToolsDto
 }
 
 class CarPartsFactory{
+createCarParts(CarPartsDto):CarParts
+createCarPartsDto(CarParts):CarPartsDto
 }
 
 class ElectronicsAdapter{
@@ -75,11 +72,23 @@ secondName:string
 phone:string
 }
 
+enum ProductType{
+ELECTRONICS,
+GARDEN_TOOLS,
+CAR_PARTS
+}
+
+enum SaleAnnouncementStatus{
+PENDING,
+APPROVED,
+REJECTED
+}
+
 class SaleAnnouncement{
 saleDate:Date
 description:string
 interestRate:double
-frequency:string
+status:boolean
 }
 
 Admin --o AuctionAnnouncement
@@ -96,7 +105,6 @@ GardenTools --o GardenToolsAdapter
 GardenToolsAdapter ..|> Product
 CarParts --o CarPartsAdapter
 CarPartsAdapter ..|> Product
-ElectronicsFactory ..|> ProductFactory
-GardenToolsFactory ..|> ProductFactory
-CarPartsFactory ..|> ProductFactory
+ProductType --o SaleAnnouncement
+SaleAnnouncementStatus --o SaleAnnouncement
 @enduml

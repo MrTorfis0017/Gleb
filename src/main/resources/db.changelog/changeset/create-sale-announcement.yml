@@ -1,0 +1,66 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_sale_announcement_table
+      author: aleksandrPob
+      changes:
+        - createTable:
+            tableName: SALE_ANNOUNCEMENT
+            columns:
+              - column:
+                  name: ID
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: PK_SALE_ANNOUNCEMENT
+              - column:
+                  name: CREATE_DATE
+                  type: VARCHAR(150)
+                  constraints:
+                    unique: false
+                    nullable: false
+              - column:
+                  name: APPROVE_DATE
+                  type: VARCHAR(150)
+                  constraints:
+                    unique: false
+                    nullable: true
+              - column:
+                  name: DESCRIPTION
+                  type: VARCHAR(100)
+                  constraints:
+                    unique: false
+                    nullable: false
+              - column:
+                  name: INTEREST_RATE
+                  type: INTEGER
+                  constraints:
+                    unique: false
+                    nullable: false
+              - column:
+                  name: SALESMAN_ID
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    unique: false
+                    foreignKeyName: FK_SALESMAN_ID
+                    references: SALESMAN(ID)
+              - column:
+                  name: PRODUCT_ID
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    unique: false
+              - column:
+                  name: PRODUCT_TYPE
+                  type: VARCHAR(150)
+                  constraints:
+                    unique: false
+                    nullable: false
+              - column:
+                  name: SALE_STATUS
+                  type: VARCHAR(150)
+                  constraints:
+                    unique: false
+                    nullable: false

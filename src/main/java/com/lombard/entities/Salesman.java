@@ -3,6 +3,9 @@ package com.lombard.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @Setter
 @Builder
@@ -24,4 +27,7 @@ public class Salesman {
 
     @Column(name = "PHONE")
     private String phone;
+
+    @OneToMany(mappedBy = "salesman")
+    private List<SaleAnnouncement> saleAnnouncements;
 }
