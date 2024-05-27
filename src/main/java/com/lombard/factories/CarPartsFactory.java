@@ -19,8 +19,6 @@ public class CarPartsFactory {
     }
 
     public static CarParts createCarParts(CarPartsDto carParts) {
-
-
         return CarParts.builder()
                 .id(carParts.getId())
                 .compatability(carParts.getCompatability())

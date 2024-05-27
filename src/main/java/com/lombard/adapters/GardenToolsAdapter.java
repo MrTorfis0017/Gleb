@@ -10,7 +10,7 @@ public class GardenToolsAdapter implements ProductAdapter {
     private final GardenToolsDto gardenToolsDto;
 
     @Override
-    public String getDescripton() {
+    public String getDescription() {
         return "Tool type:" + gardenToolsDto.getToolType() + ", Material: " + gardenToolsDto.getMaterial();
     }
 }

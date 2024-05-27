@@ -10,7 +10,7 @@ public class ElectronicsAdapter implements ProductAdapter {
     private ElectronicsDto electronics;
 
     @Override
-    public String getDescripton() {
+    public String getDescription() {
         return "Brand: " + electronics.getBrand() + ", Model: " + electronics.getModel();
     }
 }

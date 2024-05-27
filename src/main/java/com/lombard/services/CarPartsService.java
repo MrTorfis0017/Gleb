@@ -16,6 +16,6 @@ public class CarPartsService {
     public String getInfo(Long id) {
         CarParts carParts = carPartsRepository.getReferenceById(id);
         CarPartsAdapter carPartsAdapter = new CarPartsAdapter(CarPartsFactory.createCarPartsDto(carParts));
-        return carPartsAdapter.getDescripton();
+        return carPartsAdapter.getDescription();
     }
 }

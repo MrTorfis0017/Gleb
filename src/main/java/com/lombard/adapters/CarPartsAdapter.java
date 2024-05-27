@@ -10,7 +10,7 @@ public class CarPartsAdapter implements ProductAdapter {
     private final CarPartsDto carPartsDto;
 
     @Override
-    public String getDescripton() {
+    public String getDescription() {
         return "Part number: " + carPartsDto.getPartNumber() + ", Compatability: " + carPartsDto.getCompatability();
     }
 }

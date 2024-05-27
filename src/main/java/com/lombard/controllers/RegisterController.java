@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/lombard/warehouse/register")
-public class SalesmanController {
+public class RegisterController {
 
     private final RegisterService registerService;
 
