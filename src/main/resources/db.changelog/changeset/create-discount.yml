@@ -16,7 +16,7 @@ databaseChangeLog:
                     primaryKeyName: PK_DISCOUNT
               - column:
                   name: DISCOUNT_PERCENTAGE
-                  type: BIGINT
+                  type: FLOAT
                   constraints:
                     unique: false
                     nullable: false

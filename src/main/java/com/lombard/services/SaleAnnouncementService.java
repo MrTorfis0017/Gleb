@@ -22,10 +22,8 @@ public class SaleAnnouncementService {
 
     private final GardenToolsRepository gardenToolsRepository;
 
-
     public SaleAnnouncementDto createSaleAnnouncement(SaleAnnouncementDto saleAnnouncementDto) {
         SaleAnnouncement saleAnnouncement = saleAnnouncementRepository.save(SaleAnnouncementFactory.createSaleAnnouncement(saleAnnouncementDto, carPartsRepository, electronicsRepository, gardenToolsRepository));
         return SaleAnnouncementFactory.createSaleAnnouncementDto(saleAnnouncement, carPartsRepository, electronicsRepository, gardenToolsRepository);
     }
-
 }

@@ -1,11 +1,9 @@
 package com.lombard.controllers;
 
+import com.lombard.dtos.CarPartsDto;
 import com.lombard.services.CarPartsService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -17,5 +15,15 @@ public class CarPartsController {
     @GetMapping("/info/{id}")
     public String getInfo(@PathVariable("id") Long id) {
         return carPartsService.getInfo(id);
+    }
+
+    @GetMapping("/{id}")
+    public CarPartsDto getProduct(@PathVariable("id") Long id) {
+        return carPartsService.getById(id);
+    }
+
+    @PostMapping("/discount/{id}")
+    public CarPartsDto addDiscount(Double discount, @PathVariable(name = "id") Long id) {
+        return carPartsService.addDiscount(id,discount);
     }
 }

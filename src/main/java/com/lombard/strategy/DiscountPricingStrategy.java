@@ -9,7 +9,7 @@ public class DiscountPricingStrategy implements PricingStrategy {
 
     private Long id;
 
-    private double discount;
+    private Double discount;
 
     @Override
     public double calculatePrice(double basePrice) {

@@ -124,4 +124,5 @@ DiscountPricingStrategy ..|> PricingStrategy
 PricingStrategy--o Electronics
 PricingStrategy--o GardenTools
 PricingStrategy--o CarParts
+ProductType--o AuctionAnnouncement
 @enduml
